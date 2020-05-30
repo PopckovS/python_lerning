@@ -249,13 +249,38 @@ def tree_function_revers(max, switch=5):
 
     print('\n')
 
-tree_function_revers(63)
+tree_function_revers(63, 4)
+
 
 
 # ===============================================
-''''''
-print(start_block)
-# Answer:
+'''Вывод елочки с переломом и возрастающей амплитудой'''
+print("{0} Вывод елочки с переломом и возрастающей амплитудой {0}".format('=========='))
+
+def tree_function_revers(max, switch=5):
+    number, fuss, limit, start = 1, 1, 1, 0
+
+    while number <= max:
+        if switch == fuss:
+            switch+= 1 # Вот этот кусочек, с каждым циклом мы увелич след амплитуду на +1
+            limit = -1
+        elif fuss == 1:
+            limit =  1
+
+        print(number, end=' ')
+        number += 1
+        start += 1
+
+        if start == fuss:
+            start = 0
+            print('\n', end='')
+            if limit == 1:
+                fuss += 1
+            elif limit == -1:
+                fuss -= 1
+    print('\n')
+
+tree_function_revers(130, 4)
 
 
 
